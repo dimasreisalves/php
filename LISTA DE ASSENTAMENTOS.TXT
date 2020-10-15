@@ -1,0 +1,156 @@
+
+
+
+ASSENTAMENTOS DO MES
+
+
+SELECT
+a.ASSE_DTINCLUSAO,
+a.ASSE_ID_OCORR,
+b.OCOR_DESC_RESUMIDA,
+c.USER_NOME,
+d.CLI_NREDUZ
+FROM base_teste_nova.assentamento a
+INNER JOIN base_teste_nova.ocorrencias b on b.OCOR_ID = a.ASSE_ID_OCORR
+INNER JOIN base_teste_nova.usuario c ON c.USER_ID = b.OCOR_ID_USUARIO
+inner join base_teste_nova.clientes d on d.CLI_ID = b.OCOR_ID_CLIENTE
+WHERE a.ASSE_DTINCLUSAO > (DATE_ADD(CURDATE(), INTERVAL -60 DAY))
+order by 1 desc
+
+;
+
+
+
+
+
+
+
+
+
+
+SELECT CURDATE(), CURTIME(), NOW();
+
+SELECT DATE_ADD(CURDATE(), INTERVAL -60 DAY);
+
+
+
+SELECT
+a.ASSE_DTINCLUSAO,
+a.ASSE_ID_OCORR,
+b.OCOR_DESC_RESUMIDA,
+c.USER_NOME,
+d.CLI_NREDUZ
+FROM base_teste_nova.assentamento a
+INNER JOIN base_teste_nova.ocorrencias b on b.OCOR_ID = a.ASSE_ID_OCORR
+INNER JOIN base_teste_nova.usuario c ON c.USER_ID = b.OCOR_ID_USUARIO
+inner join base_teste_nova.clientes d on d.CLI_ID = b.OCOR_ID_CLIENTE
+WHERE a.ASSE_DTINCLUSAO > (DATE_ADD(CURDATE(), INTERVAL -60 DAY))
+order by 1 desc
+
+;
+
+
+
+
+
+ complata
+
+SELECT 
+a.ASSE_ID_OCORR, 
+a.ASSE_DESCRICAO, 
+a.ASSE_DTINCLUSAO, 
+b.OCOR_ID, 
+b.OCOR_ID_MODULOS, 
+b.OCOR_DTINCLUSAO, 
+a.ASSE_DTINCLUSAO,
+b.OCOR_ID_CLIENTE, 
+b.OCOR_ID_USUARIO, 
+c.USER_NOME, 
+d.CLI_NREDUZ
+FROM base_teste_nova.assentamento a
+INNER JOIN base_teste_nova.ocorrencias b on b.OCOR_ID = a.ASSE_ID_OCORR
+INNER JOIN base_teste_nova.usuario c ON c.USER_ID = b.OCOR_ID_USUARIO
+inner join base_teste_nova.clientes d on d.CLI_ID = b.OCOR_ID_CLIENTE
+order by 7 desc;
+
+
+assentamento
+
+SELECT * FROM base_teste_nova.assentamento a order by 4 desc
+
+
+a.ASSE_ID, 
+a.ASSE_ID_OCORR, 
+a.ASSE_DESCRICAO, 
+a.ASSE_DTINCLUSAO, 
+a.ASSE_USUARIO_CODIGO, 
+a.ASSE_DTPRAZO, 
+a.ASSE_SIS
+
+ocorrencias
+
+
+SELECT * FROM base_teste_nova.ocorrencias o;
+
+b.OCOR_ID_PROB, 
+b.OCOR_DESC_RESUMIDA, 
+b.OCOR_DESCRICAO, 
+b.OCOR_DTPRAZO, 
+b.OCOR_DTENCERRAMENTO, 
+b.OCOR_ID_CONSULTOR, 
+b.OCOR_EMAIL, 
+b.OCOR_ID_SUB, 
+b.OCOR_CONTATO, 
+b.OCOR_IMPACTO, 
+b.OCOR_CLASSIFICACAO, 
+b.OCOR_CONSULTOR, 
+b.OCOR_DTLIMITE, 
+b.OCOR_PROJETO, 
+b.OCOR_USUARIO_ENCERROU
+
+
+
+
+SELECT * FROM base_teste_nova.usuario c;
+
+  c.USER_ID
+, c.USER_LOGIN
+, c.USER_NOME
+, c.USER_SENHA
+, c.USER_NASCIMENTO
+, c.USER_INCLUSAO
+, c.USER_STATUS
+, c.USER_NIVEL
+, c.USER_CONSULTOR
+, c.USER_BLOQUEADO
+, c.USER_FOTOS
+, c.USER_SHA1
+
+
+
+
+SELECT * FROM base_teste_nova.clientes d;
+
+
+ d.CLI_ID
+, CLI_CODIGO
+, CLI_LOJA
+, CLI_CNPJ
+, CLI_INSCRI
+, CLI_NOME
+, CLI_NREDUZ
+, CLI_END
+, CLI_BAIRRO
+, CLI_MUN
+, CLI_EST
+, CLI_CEP
+, CLI_TEL
+, CLI_CONTATO
+, CLI_ID_RESPONSAVEL
+, CLI_BLOQUEADO
+, CLI_DTINCLUSAO
+, CLI_TIPOCOD
+, CLI_COMPLEMENTO
+, CLI_NUM
+, CLI_TRANSLADO
+
